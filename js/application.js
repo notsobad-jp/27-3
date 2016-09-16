@@ -1,0 +1,3 @@
+$(function(){
+  //$(".dimmer").dimmer('show');
+});
