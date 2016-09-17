@@ -120,7 +120,7 @@ $(function(){
       success: function(res){
         form_submitted = true;
         $('#modal-success').modal('show');
-        $('#submit').removeClass('loading');
+        $('#submit').removeClass('loading').addClass('disabled');
         console.log('Success', res);
       }
     });
