@@ -161,7 +161,7 @@
         </p>
         <!-- Begin MailChimp Signup Form -->
         <div id="mc_embed_signup">
-          <form class="validate ui form" novalidate>
+          <form id="form" action="#" class="validate ui form" method="post" novalidate>
             <div id="mc_embed_signup_scroll">
               <h4 class="ui horizontal divider header">1st Guest</h4>
               <div class="mc-field-group field">
@@ -296,6 +296,37 @@
       </h3>
       <div class="sub header">
         Hosted by Yumi and Tomomichi
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modal-success" class="ui modal">
+    <div class="header">
+      <i class="icon smile"></i>
+      Success!
+    </div>
+    <div class="content">
+      <p>The form was successfully submitted! Thank you for your cooperation;)</p>
+    </div>
+    <div class="actions">
+      <div class="ui positive right labeled icon button">
+        OK
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+  <div id="modal-error" class="ui modal">
+    <div class="header">
+      <i class="icon frown"></i>
+      Error..
+    </div>
+    <div class="content">
+      <p>Sorry some error happens. Please try again later, and please let us know if the problem still remains.</p>
+    </div>
+    <div class="actions">
+      <div class="ui negative button">
+        Close
       </div>
     </div>
   </div>

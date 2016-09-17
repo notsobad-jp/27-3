@@ -1,43 +1,37 @@
 $(function(){
-  var url = "https://us11.api.mailchimp.com/3.0/lists/96d3db4d21/members/"
-  var data = {
-    "apikey": "95142abbe5830c597e6d087f327014db-us11",
-    "email_address": "hogehoge@notsobad.jp",
-    "status": "subscribed",
-    "merge_fields": {
-      "NAME": "a",
-      "PASSPORT": "a",
-      "ADDRESS": "a",
-      "NATIONAL": "a",
-      "PHONE": "a",
-      "OCCUPY": "a"
-    }
-  }
-
-/*
-  $(document).on('click', '#submit', function(e){
-    submitMailchimp();
+  $(document).on('submit', '#form', function(e){
     e.preventDefault();
+    $('#submit').addClass('loading');
+    var data = $(this).serialize();
+
+    //TODO: Validate data
+
+    setTimeout(function(){
+      $('#submit').removeClass('loading');
+      $('#modal-success').modal('show');
+    }, 1000);
+    //submitForm(data);
   });
-*/
 
 
-  //function submitMailchimp() {
-  /*
+  function submitForm(data) {
     $.ajax({
-        url: url,
+        url: 'https://hooks.zapier.com/hooks/catch/708819/6dd91x/',
         method: 'POST',
         data: data,
         dataType: 'jsonp',
         contentType: 'application/json; charset=utf-8',
         error: function(res, text){
-            console.log('Err', res);
-            console.log(text);
+          $('#modal-error').modal('show');
+          $('#submit').removeClass('loading');
+          console.log('Err', res);
+          console.log(text);
         },
         success: function(res){
-            console.log('Success', res);
+          $('#modal-success').modal('show');
+          $('#submit').removeClass('loading');
+          console.log('Success', res);
         }
     });
-  */
-  //}
+  }
 });
