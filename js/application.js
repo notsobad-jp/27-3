@@ -2,6 +2,7 @@ $(function(){
   var form_submitted = map_downloaded = access_downloaded = keybox_downloaded = false;
   var reserve_id = '';
 
+
   /************************************************
   * Require Login
   ************************************************/
@@ -35,31 +36,20 @@ $(function(){
   /************************************************
   * Data Download
   ************************************************/
-  $(document).on('click', '#download-map', function(e){
+  var images = {
+    'map': 'howtogo.jpg',
+    'access': 'access.pdf',
+    'keybox': 'howtoopen.jpg'
+  }
+  $(document).on('click', '.download-btn', function(e){
     e.preventDefault();
-    if(!map_downloaded) {
-      //submitDownloadLog({'id': reserve_id, 'type': 'howtogo.jpg'});
-      map_downloaded = true;
+    var item = $(this).attr('data-item');
+    var downloaded = eval(item + "_downloaded");
+    if(!downloaded) {
+      submitDownloadLog({'id': reserve_id, 'type': images[item]});
+      eval(item+"_downloaded=true");
     }
-    var url = '../../img/howtogo.jpg';
-    window.open(url, '_blank');
-  });
-  $(document).on('click', '#download-access', function(e){
-    e.preventDefault();
-    if(!access_downloaded) {
-      submitDownloadLog({'id': reserve_id, 'type': 'access.pdf'});
-      access_downloaded = true;
-    }
-    var url = '../../img/access.pdf';
-    window.open(url, '_blank');
-  });
-  $(document).on('click', '#download-keybox', function(e){
-    e.preventDefault();
-    if(!keybox_downloaded) {
-      submitDownloadLog({'id': reserve_id, 'type': 'howtoopen.jpg'});
-      keybox_downloaded = true;
-    }
-    var url = '../../img/howtoopen.jpg';
+    var url = '../../img/' + images[item];
     window.open(url, '_blank');
   });
 
@@ -106,16 +96,12 @@ $(function(){
       }
     });
 
-    setTimeout(function(){
+    if(valid) {
+      submitForm(data);
+    }else {
       $('#submit').removeClass('loading');
-      if(valid) {
-        $('#modal-success').modal('show');
-        form_submitted = true;
-      }else {
-        $('#modal-error').modal('show');
-      }
-    }, 10);
-    //submitForm(data);
+      $('#modal-error').modal('show');
+    }
   });
 
   function submitForm(data) {
