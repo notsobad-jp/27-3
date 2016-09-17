@@ -10,7 +10,7 @@
   <meta name="keywords" content=""/>
 
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.3/semantic.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.3/semantic.min.js"></script>
   <script type="text/javascript" src="./js/application.js"></script>
   <style media="screen" type="text/css">
@@ -19,7 +19,7 @@
   </style>
 </head>
 <body>
-  <div class="ui fluid container" style="margin-left:0!important;margin-right:0!important;">
+  <div class="ui fluid container" style="margin-left:0!important;margin-right:0!important;overflow:hidden!important;">
     <div class="ui fixed borderless menu">
       <h1 class="ui small header item">
         KYOTO 27-3
@@ -49,7 +49,8 @@
               Detailed Map
             </div>
             <div>
-              <div class="ui small primary button">
+              <div class="ui primary icon button">
+                <i class="icon download"></i>
                 Download
               </div>
             </div>
@@ -60,7 +61,8 @@
               Access Guide
             </div>
             <div>
-              <div class="ui small primary button">
+              <div class="ui primary icon button">
+                <i class="icon download"></i>
                 Download
               </div>
             </div>
@@ -71,7 +73,8 @@
               Keybox Usage
             </div>
             <div>
-              <div class="ui small primary button">
+              <div class="ui primary icon button">
+                <i class="icon download"></i>
                 Download
               </div>
             </div>
@@ -83,7 +86,7 @@
 
       <div class="ui basic segment">
         <h2 class="ui header">2. House Rules</h2>
-        <div class="ui list" style="font-size:1.5rem;">
+        <div class="ui list" style="font-size:1.2rem;">
           <div class="item">
             <i class="icon checkmark"></i>
             <div class="content">
@@ -112,11 +115,11 @@
               Shops and Restaurants
             </div>
             <div class="description">
-              Our customized google maps with shops and restaurants around the house.
+              Customized google maps with shops and restaurants around the house.
             </div>
             <br>
-            <a class="ui small button" href="https://www.google.com/maps/d/edit?mid=zUpNyRi0EL-U.kuezRBPB4zyk&usp=sharing" target="_blank">
-              <i class="icon external"></i>
+            <a class="ui basic black button" href="https://www.google.com/maps/d/edit?mid=zUpNyRi0EL-U.kuezRBPB4zyk&usp=sharing" target="_blank">
+              <i class="icon search"></i>
               Check
             </a>
           </div>
@@ -129,8 +132,8 @@
               Our house has two bikes. If you need more, please check the link below.
             </div>
             <br>
-            <a class="ui small button" href="http://www.kyoto-option.com/english/" target="_blank">
-              <i class="icon external"></i>
+            <a class="ui basic black button" href="http://www.kyoto-option.com/english/" target="_blank">
+              <i class="icon search"></i>
               Check
             </a>
           </div>
@@ -158,7 +161,7 @@
         </p>
         <!-- Begin MailChimp Signup Form -->
         <div id="mc_embed_signup">
-          <form action="//notsobad.us11.list-manage.com/subscribe/post?u=c71a56a796830e0127965ec03&amp;id=96d3db4d21" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate ui form" target="_blank" novalidate>
+          <form class="validate ui form" novalidate>
             <div id="mc_embed_signup_scroll">
               <h4 class="ui horizontal divider header">1st Guest</h4>
               <div class="mc-field-group field">
@@ -260,12 +263,10 @@
                 <input type="text" value="" name="6_PASSPORT" class="" id="mce-6_PASSPORT">
               </div>
 
-              <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-              </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c71a56a796830e0127965ec03_96d3db4d21" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="ui fluid big red button"></div>
+              <button id="submit" class="ui fluid big red right button">
+                <i class="icon send"></i>
+                Submit
+              </button>
             </div>
           </form>
         </div>
