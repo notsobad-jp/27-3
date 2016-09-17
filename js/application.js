@@ -1,10 +1,35 @@
 $(function(){
   var form_submitted = map_downloaded = access_downloaded = keybox_downloaded = false;
+  var reserve_id = '';
 
   /************************************************
-  * TODO: Require Login
+  * Require Login
   ************************************************/
-  var reserve_id = 'hogehoge';
+  $(document).on('click', '#login-submit', function(e){
+    e.preventDefault();
+    var valid = true;
+    var res_id = $('input[name="reservation_id"]').val();
+    if(!res_id) {
+      $('input[name="reservation_id"]').parent('.field').addClass('error');
+      valid = false;
+    }else {
+      $('input[name="reservation_id"]').parent('.field').removeClass('error');
+    }
+
+    var password = $('input[name="password"]').val();
+    if(password != 'yumitomo27-3!') {
+      $('input[name="password"]').parent('.field').addClass('error');
+      valid = false;
+    }else {
+      $('input[name="password"]').parent('.field').removeClass('error');
+    }
+
+    if(valid) {
+      reserve_id = res_id;
+      $("#login-segment").hide();
+      $("#main-segment").show();
+    }
+  });
 
 
   /************************************************
