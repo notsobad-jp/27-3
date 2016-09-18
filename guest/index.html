@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//j.wovn.io/1" data-wovnio="key=swHnH" async></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>KYOTO 27-3</title>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.3/semantic.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.3/semantic.min.js"></script>
+  <script type="text/javascript" src="../js/application.js"></script>
+  <style media="screen" type="text/css">
+    i.icon.bicycle:before { margin-left: -4px !important; }
+    strong.red { color: #912D2B !important; }
+  </style>
+</head>
+<body>
+  <div id="container" class="ui fluid container hidden" style="margin-left:0!important;margin-right:0!important;overflow:hidden!important;">
+    <div class="ui fixed borderless menu">
+      <h1 class="ui small header item">
+        KYOTO 27-3
+      </h1>
+    </div>
+
+
+    <div id="login-segment" class="ui basic very padded segment" style="max-width:700px;padding-top:70px;margin:auto;">
+      <form class="ui form">
+        <div class="field">
+          <label>Reservation ID</label>
+          <input type="text" name="reservation_id" placeholder="Reservation ID">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="text" name="password" placeholder="Password">
+        </div>
+        <button id="login-submit" class="ui red button" type="submit">Login</button>
+      </form>
+    </div>
+
+
+    <div id="main-segment" class="ui basic padded segment" style="display:none;max-width:700px;padding-top:70px;margin:auto;">
+      <h1 class="ui header">
+        Guest Check Sheet
+      </h1>
+
+      <div class="ui basic segment">
+        <h2 class="ui header">1. Download Items</h2>
+        <div class="ui negative message">
+          <div class="header">
+            <i class="icon exclamation circle"></i>
+            Very Important
+          </div>
+          <p>Please be sure to download these items BEFORE YOU COME TO JAPAN.</p>
+        </div>
+        <br>
+
+        <div class="ui center aligned three column grid">
+          <div class="column">
+            <div class="ui icon header">
+              <i class="icon marker"></i>
+              Detailed Map
+            </div>
+            <div>
+              <a id="download-map" href="#" class="ui primary icon button download-btn" data-item="map">
+                <i class="icon download"></i>
+                Download
+              </a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui icon header">
+              <i class="icon map"></i>
+              Access Guide
+            </div>
+            <div>
+              <a id="download-access" href="#" class="ui primary icon button download-btn" data-item="access">
+                <i class="icon download"></i>
+                Download
+              </a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui icon header">
+              <i class="icon key"></i>
+              Keybox Usage
+            </div>
+            <div>
+              <a id="download-keybox" href="#" class="ui primary icon button download-btn" data-item="keybox">
+                <i class="icon download"></i>
+                Download
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="ui horizontal divider header"><i class="icon chevron down"></i></h4>
+
+      <div class="ui basic segment">
+        <h2 class="ui header">2. House Rules</h2>
+        <div class="ui list" style="font-size:1.2rem;">
+          <div class="item">
+            <i class="icon checkmark"></i>
+            <div class="content">
+              Check-in time is <strong class="red">2-4pm</strong>.
+            </div>
+          </div>
+          <div class="item">
+            <i class="icon checkmark"></i>
+            <div class="content">Check-out time is <strong class="red">12pm</strong>.</div>
+          </div>
+          <div class="item">
+            <i class="icon checkmark"></i>
+            <div class="content"><strong class="red">No Smoking</strong>.</div>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="ui horizontal divider header"><i class="icon chevron down"></i></h4>
+
+      <div class="ui basic segment">
+        <h2 class="ui header">3. Useful Information</h2>
+        <div class="ui center aligned two column grid">
+          <div class="column">
+            <div class="ui icon header">
+              <i class="icon circular shopping bag"></i>
+              Shops and Restaurants
+            </div>
+            <div class="description">
+              Customized google maps with shops and restaurants around the house.
+            </div>
+            <br>
+            <a class="ui basic black button" href="https://www.google.com/maps/d/edit?mid=zUpNyRi0EL-U.kuezRBPB4zyk&usp=sharing" target="_blank">
+              <i class="icon search"></i>
+              Check
+            </a>
+          </div>
+          <div class="column">
+            <div class="ui icon header">
+              <i class="icon circular bicycle"></i>
+              Rent a bike (more than two)
+            </div>
+            <div class="description">
+              Our house has two bikes. If you need more, please check the link below.
+            </div>
+            <br>
+            <a class="ui basic black button" href="http://www.kyoto-option.com/english/" target="_blank">
+              <i class="icon search"></i>
+              Check
+            </a>
+          </div>
+        </div>
+        <br>
+
+        <div class="ui info message">
+          <div class="header">
+            <i class="icon call"></i>
+            Contact us
+          </div>
+          <p>
+            Please call us if you have any problems.
+            <strong>080-8135-3857</strong> / <strong>080-5034-1588</strong>
+          </p>
+        </div>
+      </div>
+
+      <h4 class="ui horizontal divider header"><i class="icon chevron down"></i></h4>
+
+      <div class="ui basic segment">
+        <h2 class="ui header">4. Guest Information</h2>
+        <p>
+          Please fulfill the form below before your arrival.
+        </p>
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form id="form" action="#" class="validate ui form" method="post" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <h4 class="ui horizontal divider header">1st Guest</h4>
+              <div class="mc-field-group field">
+                <label for="mce-NAME">1. Name  <span class="asterisk">*</span></label>
+                <input type="text" value="" name="NAME" class="required" id="mce-NAME">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-NATIONAL">1-1. Nationality <span class="asterisk">*</span></label>
+                <input type="text" value="" name="NATIONAL" class="required" id="mce-NATIONAL">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-PASSPORT">1-2. Passport Number <span class="asterisk">*</span></label>
+                <input type="text" value="" name="PASSPORT" class="required" id="mce-PASSPORT">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-ADDRESS">1-3. Address <span class="asterisk">*</span></label>
+                <input type="text" value="" name="ADDRESS" class="required" id="mce-ADDRESS">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-PHONE">1-4. Phone Number <span class="asterisk">*</span></label>
+                <input type="text" value="" name="PHONE" class="required" id="mce-PHONE">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-OCCUPY">1-5. Occupation <span class="asterisk">*</span></label>
+                <input type="text" value="" name="OCCUPY" class="required" id="mce-OCCUPY">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-EMAIL">1-6. Email <span class="asterisk">*</span></label>
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+              </div>
+
+              <h4 class="ui horizontal divider header">2nd Guest</h4>
+              <div class="mc-field-group field">
+                <label for="mce-2_NAME">2. Name</label>
+                <input type="text" value="" name="2_NAME" class="" id="mce-2_NAME">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-2_NATIONAL">2-1. Nationality</label>
+                <input type="text" value="" name="2_NATIONAL" class="" id="mce-2_NATIONAL">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-2_PASSPORT">2-2. Passport Number</label>
+                <input type="text" value="" name="2_PASSPORT" class="" id="mce-2_PASSPORT">
+              </div>
+
+              <h4 class="ui horizontal divider header">3rd Guest</h4>
+              <div class="mc-field-group field">
+                <label for="mce-3_NAME">3. Name</label>
+                <input type="text" value="" name="3_NAME" class="" id="mce-3_NAME">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-3_NATIONAL">3-1. Nationality</label>
+                <input type="text" value="" name="3_NATIONAL" class="" id="mce-3_NATIONAL">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-3_PASSPORT">3-2. Passport Number</label>
+                <input type="text" value="" name="3_PASSPORT" class="" id="mce-3_PASSPORT">
+              </div>
+
+              <h4 class="ui horizontal divider header">4th Guest</h4>
+              <div class="mc-field-group field">
+                <label for="mce-4_NAME">4. Name</label>
+                <input type="text" value="" name="4_NAME" class="" id="mce-4_NAME">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-4_NATIONAL">4-1. Nationality</label>
+                <input type="text" value="" name="4_NATIONAL" class="" id="mce-4_NATIONAL">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-4_PASSPORT">4-2. Passport Number</label>
+                <input type="text" value="" name="4_PASSPORT" class="" id="mce-4_PASSPORT">
+              </div>
+
+              <h4 class="ui horizontal divider header">5th Guest</h4>
+              <div class="mc-field-group field">
+                <label for="mce-5_NAME">5. Name</label>
+                <input type="text" value="" name="5_NAME" class="" id="mce-5_NAME">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-5_NATIONAL">5-1. Nationality</label>
+                <input type="text" value="" name="5_NATIONAL" class="" id="mce-5_NATIONAL">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-5_PASSPORT">5-2. Passport Number</label>
+                <input type="text" value="" name="5_PASSPORT" class="" id="mce-5_PASSPORT">
+              </div>
+
+              <h4 class="ui horizontal divider header">6th Guest</h4>
+              <div class="mc-field-group field">
+                <label for="mce-6_NAME">6. Name</label>
+                <input type="text" value="" name="6_NAME" class="" id="mce-6_NAME">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-6_NATIONAL">6-1. Nationality</label>
+                <input type="text" value="" name="6_NATIONAL" class="" id="mce-6_NATIONAL">
+              </div>
+              <div class="mc-field-group field">
+                <label for="mce-6_PASSPORT">6-2. Passport Number</label>
+                <input type="text" value="" name="6_PASSPORT" class="" id="mce-6_PASSPORT">
+              </div>
+
+              <button id="submit" class="ui fluid big red right button">
+                <i class="icon send"></i>
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <!--End mc_embed_signup-->
+
+        <br><br><br>
+        <div>
+          <div class="ui message">
+            <div class="header">
+              Request for producing of passports, etc. for identification purposes
+            </div>
+            Since April 1, 2005, under the relevant laws and regulations, the Japanese Government is requiring “foreign nationals who do not possess an address in Japan” to provide their ＊nationality and ＊passport number in addition to their ＊name, ＊address, and ＊occupation, etc. and produce and make a copy of their passport upon checking in at lodgings. Your understanding and cooperation is appreciated.
+            <p><strong>Ministry of Health, Labour and Welfare</strong></p>
+          </div>
+          <img class="ui image" src="../../img/form.gif">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="ui inverted attached footer center aligned padded segment">
+      <h3 class="ui inverted header">
+        KYOTO 27-3
+        <div class="sub header">
+          Since 1936
+        </div>
+      </h3>
+      <div class="sub header">
+        Hosted by Yumi and Tomomichi
+      </div>
+    </div>
+  </div>
+
+
+  <div id="modal-success" class="ui modal">
+    <div class="header">
+      <i class="icon smile"></i>
+      Success!
+    </div>
+    <div class="content">
+      <p>The form was successfully submitted! Thank you for your cooperation;)</p>
+    </div>
+    <div class="actions">
+      <div class="ui positive right labeled icon button">
+        OK
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+  <div id="modal-error" class="ui modal">
+    <div class="header">
+      <i class="icon frown"></i>
+      Error..
+    </div>
+    <div class="content">
+      <p>Sorry some error happens. Please check the required fields are not left blank. If it's not the case, try again later and please let us know if the problem still remains.</p>
+    </div>
+    <div class="actions">
+      <div class="ui negative button">
+        Close
+      </div>
+    </div>
+  </div>
+
+  <div class="ui page dimmer">
+    <div class="content">
+      <div class="center">Hello</div>
+    </div>
+  </div>
+</body>
+</html>
