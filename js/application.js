@@ -2,6 +2,8 @@ $(function(){
   var form_submitted = map_downloaded = access_downloaded = keybox_downloaded = false;
   var reserve_id = '';
 
+      $("#login-segment").hide();
+      $("#main-segment").show();
 
   /************************************************
   * Require Login
