@@ -73,7 +73,6 @@
       }
 
       var targetMonth = location.search.substring(7) || moment().format('MM');  //returns 01 e.g.
-      alert(targetMonth);
       $('#targetMonth').text('【'+targetMonth+'月】');
 
       var colors = {
@@ -100,9 +99,6 @@
         row.checkinunix = moment(checkin).unix();
         row.checkin = moment(checkin).format('M月D日(ddd)');
         row.checkout = moment(checkout).format('M月D日(ddd)');
-        // row.checkinunix = moment(row.checkin.split(', ')[1]).unix();
-        // row.checkin = moment(row.checkin.split(', ')[1]).format('M月D日(ddd)');
-        // row.checkout = moment(row.checkout.split(', ')[1]).format('M月D日(ddd)');
         row.persons = row.persons.replace('infants', 'infants(乳幼児)');
         row.checkintime = row.checkintime || '(未定)';
         row.comment = row.comment || '';
