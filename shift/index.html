@@ -75,6 +75,7 @@
         row.nights = row.nights.replace(' nights', '泊');
         row.checkinunix = moment(row.checkin.split(', ')[1]).unix();
         row.checkin = moment(row.checkin.split(', ')[1]).format('M月D日(ddd)');
+        alert(row.checkin.split(', ')[1]);
         row.checkout = moment(row.checkout.split(', ')[1]).format('M月D日(ddd)');
         row.persons = row.persons.replace('infants', 'infants(乳幼児)');
         row.checkintime = row.checkintime || '(未定)';
@@ -92,7 +93,6 @@
           $.each(data, function(){
             //対象月のデータじゃなかったらスキップ
             month = ('00' + this.checkin.split('月')[0]).slice(-2);
-            alert(this.checkin);
             if(month != targetMonth) { return true; }
 
             items[this.checkinunix] = `
