@@ -73,10 +73,9 @@
         row.name = (nameandaddress) ? nameandaddress[1] : row.nameandaddress;
         row.address = (nameandaddress) ? nameandaddress[2] : '';
         row.nights = row.nights.replace(' nights', '泊');
-        row.checkinunix = moment(row.checkin).unix();
-        alert(row.checkin);
-        row.checkin = moment(row.checkin).format('M月D日(ddd)');
-        row.checkout = moment(row.checkout).format('M月D日(ddd)');
+        row.checkinunix = moment(row.checkin.split(', ')[1]).unix();
+        row.checkin = moment(row.checkin.split(', ')[1]).format('M月D日(ddd)');
+        row.checkout = moment(row.checkout.split(', ')[1]).format('M月D日(ddd)');
         row.persons = row.persons.replace('infants', 'infants(乳幼児)');
         row.checkintime = row.checkintime || '(未定)';
         row.comment = row.comment || '';
