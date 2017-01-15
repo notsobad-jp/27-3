@@ -57,6 +57,21 @@
           weekdaysShort: ["日","月","火","水","木","金","土"],
       });
 
+      var months = {
+        'Jan': '01',
+        'Feb': '02',
+        'Mar': '03',
+        'Apr': '04',
+        'May': '05',
+        'Jun': '06',
+        'Jul': '07',
+        'Aug': '08',
+        'Sep': '09',
+        'Oct': '10',
+        'Nov': '11',
+        'Dec': '12'
+      }
+
       var targetMonth = location.search.substring(7) || moment().format('MM');  //returns 01 e.g.
       alert(targetMonth);
       $('#targetMonth').text('【'+targetMonth+'月】');
@@ -72,14 +87,22 @@
         var nameandaddress = row.nameandaddress.match(/([^\s]*\s[^\s]*)\s(.*)/);
         row.name = (nameandaddress) ? nameandaddress[1] : row.nameandaddress;
         row.address = (nameandaddress) ? nameandaddress[2] : '';
-        if(row.nights == "6 nights") {
-          alert(row.checkin.split(', ')[1]);
-          alert(moment(row.checkin.split(', ')[1]), 'MMM D');
-        }
+
+        var checkinDate = row.checkin.split(', ')[1].split(' ');
+        var checkinMonth = months[checkinDate[0]];
+        var checkin = '2016-'+checkinMonth+'-'+('00'+checkinDate[1]).slice(-2);
+
+        var checkoutDate = row.checkout.split(', ')[1].split(' ');
+        var checkoutMonth = months[checkoutDate[0]];
+        var checkout = '2016-'+checkoutMonth+'-'+('00'+checkoutDate[1]).slice(-2);
+
         row.nights = row.nights.replace(' nights', '泊');
-        row.checkinunix = moment(row.checkin.split(', ')[1]).unix();
-        row.checkin = moment(row.checkin.split(', ')[1]).format('M月D日(ddd)');
-        row.checkout = moment(row.checkout.split(', ')[1]).format('M月D日(ddd)');
+        row.checkinunix = moment(checkin).unix();
+        row.checkin = moment(checkin).format('M月D日(ddd)');
+        row.checkout = moment(checkout).format('M月D日(ddd)');
+        // row.checkinunix = moment(row.checkin.split(', ')[1]).unix();
+        // row.checkin = moment(row.checkin.split(', ')[1]).format('M月D日(ddd)');
+        // row.checkout = moment(row.checkout.split(', ')[1]).format('M月D日(ddd)');
         row.persons = row.persons.replace('infants', 'infants(乳幼児)');
         row.checkintime = row.checkintime || '(未定)';
         row.comment = row.comment || '';
