@@ -72,7 +72,7 @@
         var nameandaddress = row.nameandaddress.match(/([^\s]*\s[^\s]*)\s(.*)/);
         row.name = (nameandaddress) ? nameandaddress[1] : row.nameandaddress;
         row.address = (nameandaddress) ? nameandaddress[2] : '';
-        if(row.nights == 6) {
+        if(row.nights == "6 nights") {
           alert(row.checkin.split(', ')[1]);
           alert(moment(row.checkin.split(', ')[1]));
         }
