@@ -72,10 +72,12 @@
         var nameandaddress = row.nameandaddress.match(/([^\s]*\s[^\s]*)\s(.*)/);
         row.name = (nameandaddress) ? nameandaddress[1] : row.nameandaddress;
         row.address = (nameandaddress) ? nameandaddress[2] : '';
+        if(row.nights == 6) {
+          alert(row.checkin.split(', ')[1]);
+          alert(moment(row.checkin.split(', ')[1]));
+        }
         row.nights = row.nights.replace(' nights', '泊');
         row.checkinunix = moment(row.checkin.split(', ')[1]).unix();
-        alert(row.checkin);
-        alert(row.checkin.split(', ')[1]);
         row.checkin = moment(row.checkin.split(', ')[1]).format('M月D日(ddd)');
         row.checkout = moment(row.checkout.split(', ')[1]).format('M月D日(ddd)');
         row.persons = row.persons.replace('infants', 'infants(乳幼児)');
