@@ -74,7 +74,7 @@
         row.address = (nameandaddress) ? nameandaddress[2] : '';
         if(row.nights == "6 nights") {
           alert(row.checkin.split(', ')[1]);
-          alert(moment(row.checkin.split(', ')[1]), 'MMM DD');
+          alert(moment(row.checkin.split(', ')[1]), 'MMM D');
         }
         row.nights = row.nights.replace(' nights', '泊');
         row.checkinunix = moment(row.checkin.split(', ')[1]).unix();
