@@ -95,11 +95,11 @@
           var checkinMonth = months[checkinMatch[0]];
         //日本語表記の場合
         }else {
-          var checkinMatch = row.checkin.match(/(\d+)月(\d+)日/);
-          var checkinDate = ('00'+checkinMatch[1]).slice(-2);
-          var checkinMonth = ('00'+checkinMatch[2]).slice(-2);
+          var checkinMatch = row.checkin.match(/(\d+)[月|\/](\d+)/);
+          var checkinMonth = ('00'+checkinMatch[1]).slice(-2);
+          var checkinDate = ('00'+checkinMatch[2]).slice(-2);
         }
-        var checkin = `2016-${checkinMonth}-${checkinDate}`;
+        var checkin = `2017-${checkinMonth}-${checkinDate}`;
 
         // CHECK-OUT
         //英字表記の場合
@@ -109,11 +109,11 @@
           var checkoutMonth = months[checkoutMatch[0]];
         //日本語表記の場合
         }else {
-          var checkoutMatch = row.checkout.match(/(\d+)月(\d+)日/);
-          var checkoutDate = ('00'+checkoutMatch[1]).slice(-2);
-          var checkoutMonth = ('00'+checkoutMatch[2]).slice(-2);
+          var checkoutMatch = row.checkout.match(/(\d+)[月|\/](\d+)/);
+          var checkoutMonth = ('00'+checkoutMatch[1]).slice(-2);
+          var checkoutDate = ('00'+checkoutMatch[2]).slice(-2);
         }
-        var checkout = `2016-${checkoutMonth}-${checkoutDate}`;
+        var checkout = `2017-${checkoutMonth}-${checkoutDate}`;
 
         row.nights = row.nights.replace(' nights', '泊');
         row.checkinunix = moment(checkin).unix();
@@ -140,7 +140,7 @@
             items[this.checkinunix] = `
               <div class="item">
                 <a class="image" href="${this.profileurl}" target="_blank">
-                  <img src="${this.profileimg}">
+                  <img src="${this.profileimg || 'https://placeholdit.imgix.net/~text?txtsize=33&txt=(^o^)&w=200&h=150'}">
                 </a>
                 <div class="content">
                   <a class="header" href="${this.profileurl}" target="_blank">
