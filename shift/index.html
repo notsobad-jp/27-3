@@ -87,13 +87,33 @@
         row.name = (nameandaddress) ? nameandaddress[1] : row.nameandaddress;
         row.address = (nameandaddress) ? nameandaddress[2] : '';
 
-        var checkinDate = row.checkin.split(', ')[1].split(' ');
-        var checkinMonth = months[checkinDate[0]];
-        var checkin = '2016-'+checkinMonth+'-'+('00'+checkinDate[1]).slice(-2);
+        // CHECK-IN
+        //英字表記の場合
+        if(row.checkin.match(',')) {
+          var checkinMatch = row.checkin.split(', ')[1].split(' ');
+          var checkinDate = ('00'+checkinMatch[1]).slice(-2);
+          var checkinMonth = months[checkinMatch[0]];
+        //日本語表記の場合
+        }else {
+          var checkinMatch = row.checkin.match(/(\d+)月(\d+)日/);
+          var checkinDate = ('00'+checkinMatch[1]).slice(-2);
+          var checkinMonth = ('00'+checkinMatch[2]).slice(-2);
+        }
+        var checkin = `2016-${checkinMonth}-${checkinDate}`;
 
-        var checkoutDate = row.checkout.split(', ')[1].split(' ');
-        var checkoutMonth = months[checkoutDate[0]];
-        var checkout = '2016-'+checkoutMonth+'-'+('00'+checkoutDate[1]).slice(-2);
+        // CHECK-OUT
+        //英字表記の場合
+        if(row.checkout.match(',')) {
+          var checkoutMatch = row.checkout.split(', ')[1].split(' ');
+          var checkoutDate = ('00'+checkoutMatch[1]).slice(-2);
+          var checkoutMonth = months[checkoutMatch[0]];
+        //日本語表記の場合
+        }else {
+          var checkoutMatch = row.checkout.match(/(\d+)月(\d+)日/);
+          var checkoutDate = ('00'+checkoutMatch[1]).slice(-2);
+          var checkoutMonth = ('00'+checkoutMatch[2]).slice(-2);
+        }
+        var checkout = `2016-${checkoutMonth}-${checkoutDate}`;
 
         row.nights = row.nights.replace(' nights', '泊');
         row.checkinunix = moment(checkin).unix();
