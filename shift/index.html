@@ -97,7 +97,9 @@
         $('.left.aligned.items').append("3");
         // CHECK-IN
         //英字表記の場合
-        $('.left.aligned.items').append(row.checkin);
+        if(row.checkin.match(',')) {
+          $('.left.aligned.items').append(row.checkin);
+        }
         /*
         if(row.checkin.match(',')) {
           var checkinMatch = row.checkin.split(', ')[1].split(' ');
