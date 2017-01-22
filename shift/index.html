@@ -97,23 +97,20 @@
         $('.left.aligned.items').append("3");
         // CHECK-IN
         //英字表記の場合
-        if(row.checkin.match(',')) {
+        $('.left.aligned.items').append(row.checkin);
         /*
+        if(row.checkin.match(',')) {
           var checkinMatch = row.checkin.split(', ')[1].split(' ');
           var checkinDate = ('00'+checkinMatch[1]).slice(-2);
           var checkinMonth = months[checkinMatch[0]];
-          */
         //日本語表記の場合
         }else {
-        /*
           var checkinMatch = row.checkin.match(/(\d+)[月|\/](\d+)/);
           var checkinMonth = ('00'+checkinMatch[1]).slice(-2);
           var checkinDate = ('00'+checkinMatch[2]).slice(-2);
-          */
         }
         var checkin = `2017-${checkinMonth}-${checkinDate}`;
 
-        /*
         // CHECK-OUT
         //英字表記の場合
         if(row.checkout.match(',')) {
