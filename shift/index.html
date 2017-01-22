@@ -132,12 +132,14 @@
       }
 
 
+      var name = "ネーム";
+      var coount = "カウントー";
       var listCode = (function() {/*
         <li class="" data-pref-name="{{name}}" data-is-selected="false">
         <span class="name">{{name}}</span>
         <span class="count">{{coount}}</span>
         </li>
-        */}).toString().match(/\/\*([^]*)\*\//)[1];
+        */}).toString().match(/\/\*([^]*)\*\//)[1].replace(/{{|}}/,'+');
       $('.left.aligned.items').append(listCode);
 
 /*
