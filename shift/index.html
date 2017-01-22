@@ -110,7 +110,6 @@
           var checkinDate = ('00'+checkinMatch[2]).slice(-2);
         }
         var checkin = "2017-"+ checkinMonth +"-"+ checkinDate;
-        /*
 
         // CHECK-OUT
         //英字表記の場合
@@ -124,7 +123,7 @@
           var checkoutMonth = ('00'+checkoutMatch[1]).slice(-2);
           var checkoutDate = ('00'+checkoutMatch[2]).slice(-2);
         }
-        var checkout = `2017-${checkoutMonth}-${checkoutDate}`;
+        var checkout = "2017-"+ checkoutMonth +"-"+ checkoutDate;
 
         row.nights = row.nights.replace(' nights', '泊');
         row.checkinunix = moment(checkin).unix();
@@ -134,12 +133,11 @@
         row.checkintime = row.checkintime || '(未定)';
         row.comment = row.comment || '';
         row.staff = row.staff || '担当未定';
-        */
       }
 
 
 
-      $('.left.aligned.items').append("6");
+      $('.left.aligned.items').append("7");
       /*
       Tabletop.init({
         key: '1pwJRBw4C_wrhvnGyWLqSTtaiWAb2-549RxE_qxrOFWg',
