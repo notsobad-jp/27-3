@@ -191,9 +191,11 @@
                 </div>
               </div>
             */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1].replace(/\n|\r/g, "");
+            /*
             item.replace('${this.profileurl}', this.profileurl)
                 .replace('${this.profileimg}', this.profileimg)
                 .replace('${this.name}', this.name);
+                */
             items[this.checkinunix] = item;
           });
 
