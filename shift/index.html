@@ -56,7 +56,6 @@
           weekdays: ["日曜日","月曜日","火曜日","水曜日","木曜日","金曜日","土曜日"],
           weekdaysShort: ["日","月","火","水","木","金","土"],
       });
-      $('.left.aligned.items').append("1");
 
       var months = {
         'Jan': '01',
@@ -129,6 +128,7 @@
         row.checkintime = row.checkintime || '(未定)';
         row.comment = row.comment || '';
         row.staff = row.staff || '担当未定';
+        row.profileimg = row.profileimg || "https://placeholdit.imgix.net/~text?txtsize=33&txt=(^o^)&w=200&h=150'}";
       }
 
 
@@ -144,11 +144,11 @@
             month = ('00' + this.checkin.split('月')[0]).slice(-2);
             if(month != targetMonth) { return true; }
 
-/*
-            items[this.checkinunix] = `
+            //items[this.checkinunix] = "";
+            var item = (function() {/*
               <div class="item">
                 <a class="image" href="${this.profileurl}" target="_blank">
-                  <img src="${this.profileimg || 'https://placeholdit.imgix.net/~text?txtsize=33&txt=(^o^)&w=200&h=150'}">
+                  <img src="${this.profileimg}">
                 </a>
                 <div class="content">
                   <a class="header" href="${this.profileurl}" target="_blank">
@@ -191,8 +191,7 @@
                   </div>
                 </div>
               </div>
-            `;
-*/
+            */}.toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1].replace(/\n|\r/g, "");
           });
 
           $.each(items, function(){
