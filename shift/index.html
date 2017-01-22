@@ -129,6 +129,7 @@
         row.comment = row.comment || '';
         row.staff = row.staff || '担当未定';
         row.profileimg = row.profileimg || "https://placeholdit.imgix.net/~text?txtsize=33&txt=(^o^)&w=200&h=150'}";
+        row.color = colors[row.staff];
       }
 
 
@@ -152,7 +153,7 @@
                 <div class="content">
                   <a class="header" href="${this.profileurl}" target="_blank">
                     ${this.name}
-                    <span class="ui ${colors[this.staff]} label">${this.staff}</span>
+                    <span class="ui ${this.color} label">${this.staff}</span>
                   </a>
                   <div class="meta">
                     <span>${this.address}</span>
@@ -193,6 +194,16 @@
             */}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1].replace(/\n|\r/g, "");
             item = item.replace('${this.profileurl}', this.profileurl)
                 .replace('${this.profileimg}', this.profileimg)
+                .replace('${this.color}', this.color)
+                .replace('${this.staff}', this.staff)
+                .replace('${this.address}', this.address)
+                .replace('${this.code}', this.code)
+                .replace('${this.checkin}', this.checkin)
+                .replace('${this.nights}', this.nights)
+                .replace('${this.persons}', this.persons)
+                .replace('${this.checkintime}', this.checkintime)
+                .replace('${this.checkout}', this.checkout)
+                .replace('${this.comment}', this.comment)
                 .replace('${this.name}', this.name);
             items[this.checkinunix] = item;
           });
