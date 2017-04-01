@@ -11,7 +11,7 @@ $(function(){
     var res_id = $('input[name="reservation_id"]').val();
     if(!res_id) {
       $('input[name="reservation_id"]').parent('.field').addClass('error');
-      valid = false;
+      //valid = false;
     }else {
       $('input[name="reservation_id"]').parent('.field').removeClass('error');
     }
