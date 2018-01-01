@@ -27,18 +27,18 @@
         月を選択
         <i class="dropdown icon"></i>
         <div class="menu">
-          <a class="item" href="https://27-3.info/shift?q=201601">1月</a>
-          <a class="item" href="https://27-3.info/shift?q=201602">2月</a>
-          <a class="item" href="https://27-3.info/shift?q=201603">3月</a>
-          <a class="item" href="https://27-3.info/shift?q=201604">4月</a>
-          <a class="item" href="https://27-3.info/shift?q=201605">5月</a>
-          <a class="item" href="https://27-3.info/shift?q=201606">6月</a>
-          <a class="item" href="https://27-3.info/shift?q=201607">7月</a>
-          <a class="item" href="https://27-3.info/shift?q=201608">8月</a>
-          <a class="item" href="https://27-3.info/shift?q=201609">9月</a>
-          <a class="item" href="https://27-3.info/shift?q=201610">10月</a>
-          <a class="item" href="https://27-3.info/shift?q=201611">11月</a>
-          <a class="item" href="https://27-3.info/shift?q=201612">12月</a>
+          <a class="item" href="https://27-3.info/shift?month=01">1月</a>
+          <a class="item" href="https://27-3.info/shift?month=02">2月</a>
+          <a class="item" href="https://27-3.info/shift?month=03">3月</a>
+          <a class="item" href="https://27-3.info/shift?month=04">4月</a>
+          <a class="item" href="https://27-3.info/shift?month=05">5月</a>
+          <a class="item" href="https://27-3.info/shift?month=06">6月</a>
+          <a class="item" href="https://27-3.info/shift?month=07">7月</a>
+          <a class="item" href="https://27-3.info/shift?month=08">8月</a>
+          <a class="item" href="https://27-3.info/shift?month=09">9月</a>
+          <a class="item" href="https://27-3.info/shift?month=10">10月</a>
+          <a class="item" href="https://27-3.info/shift?month=11">11月</a>
+          <a class="item" href="https://27-3.info/shift?month=12">12月</a>
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@
           var checkinMonth = ('00'+checkinMatch[1]).slice(-2);
           var checkinDate = ('00'+checkinMatch[2]).slice(-2);
         }
-        var checkin = "2017-"+ checkinMonth +"-"+ checkinDate;
+        var checkin = "2018-"+ checkinMonth +"-"+ checkinDate;
 
         // CHECK-OUT
         //英字表記の場合
@@ -119,7 +119,7 @@
           var checkoutMonth = ('00'+checkoutMatch[1]).slice(-2);
           var checkoutDate = ('00'+checkoutMatch[2]).slice(-2);
         }
-        var checkout = "2017-"+ checkoutMonth +"-"+ checkoutDate;
+        var checkout = "2018-"+ checkoutMonth +"-"+ checkoutDate;
 
         row.nights = row.nights.replace(' nights', '泊');
         row.checkinunix = moment(checkin).unix();
