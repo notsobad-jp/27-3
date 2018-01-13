@@ -131,7 +131,7 @@
         row.staff = row.staff || '担当未定';
         row.profileimg = row.profileimg || "https://placeholdit.imgix.net/~text?txtsize=33&txt=(^o^)&w=200&h=150";
         row.color = colors[row.staff];
-        row.mapStatus = (row.mapdownload == '済') ? 'check circle green' : 'warning red';
+        row.mapStatus = (row.mapdownload == '済') ? 'check green' : 'warning red';
       }
 
 
@@ -155,15 +155,15 @@
 
             var item = (function() {/*
               <div class="item">
-                <a class="image" href="${this.profileurl}" target="_blank">
+                <div class="ui small image">
                   <img src="${this.profileimg}">
-                </a>
+                </div>
                 <div class="content">
-                  <a class="header" href="${this.profileurl}" target="_blank">
+                  <div class="header">
                     ${this.name}
                     <span class="ui ${this.color} label">${this.staff}</span>
-                    <i class="icon ${this.mapStatus}"></i>
-                  </a>
+                    <i class="icon circle ${this.mapStatus}"></i>
+                  </div>
                   <div class="meta">
                     <span>${this.address}</span>
                      <small>(${this.code})</small>
