@@ -16,13 +16,13 @@ $(function(){
       $('input[name="reservation_id"]').parent('.field').removeClass('error');
     }
 
-    var password = $('input[name="password"]').val();
-    if(password != 'yumitomo27-3!') {
-      $('input[name="password"]').parent('.field').addClass('error');
-      valid = false;
-    }else {
-      $('input[name="password"]').parent('.field').removeClass('error');
-    }
+    // var password = $('input[name="password"]').val();
+    // if(password != 'yumitomo27-3!') {
+    //   $('input[name="password"]').parent('.field').addClass('error');
+    //   valid = false;
+    // }else {
+    //   $('input[name="password"]').parent('.field').removeClass('error');
+    // }
 
     if(valid) {
       reserve_id = res_id;
