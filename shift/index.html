@@ -17,7 +17,7 @@
     <div class="ui indeterminate huge text loader">Loading</div>
   </div>
   <div class="ui fluid container hidden" style="margin-left:0!important;margin-right:0!important;overflow:hidden!important;">
-    <div class="ui borderless menu">
+    <div class="ui borderless attached menu">
       <h1 class="ui small header item">
         ゲスト宿泊予定表
         <span id="targetMonth">【1月】</span>
@@ -41,6 +41,17 @@
           <a class="item" href="https://27-3.info/shift?month=12">12月</a>
         </div>
       </div>
+    </div>
+    <div class="ui borderless attached menu">
+      <a id="prevMonth" href="#" class="item">
+        <i class="icon chevron left"></i>
+        前の月
+      </a>
+      <a id="nextMonth" href="#" class="right item">
+        次の月
+        &nbsp;
+        <i class="icon chevron right"></i>
+      </a>
     </div>
 
     <div class="ui divided left aligned items" style="min-height:500px;"></div>
@@ -74,6 +85,13 @@
 
       var targetMonth = location.search.substring(7) || moment().format('MM');  //returns 01 e.g.
       $('#targetMonth').text('【'+targetMonth+'月】');
+
+
+      var prevMonth = Number(targetMonth) - 1 || 12;
+      $('#prevMonth').attr('href', 'https://27-3.info/shift?month=' + prevMonth.toString().padStart(2, "0"));
+      var nextMonth = (Number(targetMonth) + 1) % 12 || 12;
+      $('#nextMonth').attr('href', 'https://27-3.info/shift?month=' + nextMonth.toString().padStart(2, "0"));
+
 
       var colors = {
         'ユミ＆智道': 'brown',
