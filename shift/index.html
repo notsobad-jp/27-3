@@ -113,31 +113,27 @@
 
         // CHECK-IN
         //英字表記の場合
-        if(row.checkin.match(',')) {
-          var checkinMatch = row.checkin.split(', ')[1].split(' ');
-          var checkinDate = ('00'+checkinMatch[1]).slice(-2);
-          var checkinMonth = months[checkinMatch[0]];
-        //日本語表記の場合
+        if(row.checkin.match('-')) {
+          var checkin = row.checkin
+        //日本語表記の場合(TODO: 今後は廃止。旧表記がなくなったらこの部分は削除)
         }else {
           var checkinMatch = row.checkin.match(/(\d+)[月|\/](\d+)/);
           var checkinMonth = ('00'+checkinMatch[1]).slice(-2);
           var checkinDate = ('00'+checkinMatch[2]).slice(-2);
+          var checkin = "2019-"+ checkinMonth +"-"+ checkinDate;
         }
-        var checkin = "2018-"+ checkinMonth +"-"+ checkinDate;
 
         // CHECK-OUT
         //英字表記の場合
-        if(row.checkout.match(',')) {
-          var checkoutMatch = row.checkout.split(', ')[1].split(' ');
-          var checkoutDate = ('00'+checkoutMatch[1]).slice(-2);
-          var checkoutMonth = months[checkoutMatch[0]];
-        //日本語表記の場合
+        if(row.checkout.match('-')) {
+          var checkout = row.checkout
+        //日本語表記の場合(TODO: 今後は廃止。旧表記がなくなったらこの部分は削除)
         }else {
           var checkoutMatch = row.checkout.match(/(\d+)[月|\/](\d+)/);
           var checkoutMonth = ('00'+checkoutMatch[1]).slice(-2);
           var checkoutDate = ('00'+checkoutMatch[2]).slice(-2);
+          var checkout = "2019-"+ checkoutMonth +"-"+ checkoutDate;
         }
-        var checkout = "2018-"+ checkoutMonth +"-"+ checkoutDate;
 
         row.nights = row.nights.replace(' nights', '泊');
         row.checkinunix = moment(checkin).unix();

@@ -17,7 +17,7 @@ $(function(){
     }
 
     var password = $('input[name="password"]').val();
-    if(password != 'yumitomo27-3!') {
+    if(!password.match(/yumitomo27-3!?/)) {
       $('input[name="password"]').parent('.field').addClass('error');
       valid = false;
     }else {
